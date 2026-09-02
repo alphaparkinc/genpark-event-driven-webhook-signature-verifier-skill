@@ -1,0 +1,42 @@
+{
+  "name": "genpark-event-driven-webhook-signature-verifier-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Event-driven webhook signature verifier validating HMAC-SHA256 signatures, timestamp tolerances, and replay attack protection.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "webhook-security",
+  "tags": [
+    "webhook-verifier",
+    "hmac-sha256",
+    "replay-protection",
+    "svix-style",
+    "api-security"
+  ],
+  "inputs": {
+    "raw_payload_bytes": {
+      "type": "string"
+    },
+    "signature_header": {
+      "type": "string"
+    },
+    "signing_secret": {
+      "type": "string"
+    }
+  },
+  "outputs": {
+    "verification_id": {
+      "type": "string"
+    },
+    "signature_valid": {
+      "type": "boolean"
+    },
+    "parsed_event_type": {
+      "type": "string"
+    },
+    "signature_audit_receipt_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
